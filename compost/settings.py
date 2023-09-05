@@ -6,9 +6,9 @@ env = Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-j^cj(2n94^=etk_tu=z)f$xm*@z=j07ng7+ul#$ncr_k7_(rrh'
 env.read_env(BASE_DIR.joinpath('.env'))
 
+SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG', default=False)
 
 ALLOWED_HOSTS = []
